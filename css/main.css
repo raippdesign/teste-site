@@ -629,26 +629,31 @@ footer {
   opacity: 0.5;
 }
 .works .work.hovered .work-item {
-  border-bottom: 1px solid #323232;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 .works .work.hovered .work-item#w-4 {
   border-bottom: none;
 }
 
+
 .bg-color-one {
-  background-color: #d5fbe2;
+  background-color: #451883;
+  color: #fff;
 }
 
 .bg-color-two {
-  background: #f0e8e6;
+  background: #5EB0EF;
+  color: #fff;
 }
 
 .bg-color-three {
-  background: #fffbd1;
+  background: #553CB1;
+  color: #fff;
 }
 
 .bg-color-four {
-  background: #c4dcc5;
+  background-color: #FA00AB;
+  color: #fff;
 }
 
 /* BreakPoints */
@@ -703,9 +708,6 @@ footer {
   }
 }
 @media (max-width: 560px) {
-  .header {
-    /* Marquee */
-  }
   .header .wrapper .text {
     gap: 8vw;
   }
