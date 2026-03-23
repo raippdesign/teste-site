@@ -823,7 +823,7 @@ footer {
 }
 
 /* Project Single Page */
-/* Editorial Project Page */
+/* Editorial Project Page - Light Version */
 .project-editorial {
   display: flex;
   gap: 6vw;
@@ -849,6 +849,7 @@ footer {
   align-items: center;
   gap: 8px;
   opacity: 0.5;
+  color: #181818;
   transition: opacity 0.3s;
 }
 .back-index-link:hover {
@@ -881,7 +882,7 @@ footer {
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.1vw;
-  opacity: 0.4;
+  opacity: 0.5;
   margin-bottom: 1vw;
 }
 
@@ -899,7 +900,7 @@ footer {
 
 .case-header .meta-data {
   font-size: 14px;
-  opacity: 0.4;
+  opacity: 0.5;
   margin-bottom: 4.5vw;
   display: block;
 }
@@ -912,7 +913,7 @@ footer {
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.1vw;
-  opacity: 0.4;
+  opacity: 0.5;
   margin-bottom: 1.5vw;
 }
 .tags-container {
@@ -922,11 +923,12 @@ footer {
 }
 .tag-badge {
   padding: 8px 18px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(24, 24, 24, 0.15);
   border-radius: 4px;
   font-size: 12px;
   white-space: nowrap;
   letter-spacing: 0.02vw;
+  color: #181818;
 }
 
 /* Story Blocks */
@@ -937,14 +939,15 @@ footer {
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.1vw;
-  opacity: 0.4;
+  opacity: 0.5;
   margin-bottom: 1.2vw;
 }
 .project-story-block p {
   line-height: 1.7;
-  opacity: 0.7;
+  opacity: 0.8;
   max-width: 520px;
   font-size: 16px;
+  color: #181818;
 }
 
 /* Mobile & Tablet Responsiveness */
@@ -967,23 +970,19 @@ footer {
     font-size: 10vw;
   }
   
-  /* Layout re-order on mobile if using flex on parent */
   .project-editorial {
     display: flex;
     flex-direction: column;
   }
   
   .editorial-right {
-    order: 1; /* Header + Tags + Intro first? User said: intro -> gallery -> tags -> details */
+    order: 1;
   }
   .editorial-left {
-    order: 2; /* Gallery images below header */
-  }
-  .editorial-right .project-tags-section,
-  .editorial-right .project-story-block {
-     /* We can't easily break the right column parts unless we change HTML structure or use CSS Grid */
+    order: 2;
   }
 }
+
 
 
 .work-item-link {
