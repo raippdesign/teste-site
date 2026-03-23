@@ -5,10 +5,13 @@ export function projectHover() {
         const overlay = document.querySelector(".overlay");
         const prevElements = document.querySelectorAll(".prev");
 
+        if (!work || !overlay) return;
+
         // Initialize overlay position
         overlay.style.top = "0%";
         overlay.style.left = "13.25%";
-        document.querySelector("#prev-2").classList.add("active");
+        const prev2 = document.querySelector("#prev-2");
+        if (prev2) prev2.classList.add("active");
 
         // Function to remove the 'active' class from all prev elements
         function removeActiveClass() {
@@ -65,7 +68,7 @@ export function projectHover() {
                 overlay.style.top = "0%";
                 overlay.style.left = "13.25%";
                 removeActiveClass();
-                document.querySelector("#prev-2").classList.add("active");
+                if (prev2) prev2.classList.add("active");
             });
         });
     });
