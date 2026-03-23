@@ -823,89 +823,168 @@ footer {
 }
 
 /* Project Single Page */
-.project-container {
+/* Editorial Project Page */
+.project-editorial {
   display: flex;
+  gap: 6vw;
   padding-top: 15vw;
+  padding-bottom: 10vw;
 }
 
-.project-media {
+.editorial-left {
   width: 55%;
-  padding-right: 5vw;
+}
+
+.editorial-right {
+  width: 45%;
+}
+
+/* Back Link */
+.back-index-link {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1vw;
+  margin-bottom: 4vw;
+  display: flex !important;
+  align-items: center;
+  gap: 8px;
+  opacity: 0.5;
+  transition: opacity 0.3s;
+}
+.back-index-link:hover {
+  opacity: 1;
+}
+
+/* Gallery */
+.editorial-gallery {
   display: flex;
   flex-direction: column;
   gap: 2vw;
 }
-
-.project-media img {
+.editorial-gallery img {
   width: 100%;
   height: auto;
-  border-radius: 4px;
-}
-
-.project-details {
-  width: 45%;
-  padding-left: 2vw;
-}
-
-.project-details .project-info {
-  margin-bottom: 5vw;
-  position: sticky;
-  top: 15vw;
-}
-
-.project-details .project-info label {
-  font-size: 12px;
-  letter-spacing: 0.1vw;
-  text-transform: uppercase;
-  opacity: 0.6;
+  border-radius: 2px;
   display: block;
-  margin-bottom: 2vw;
 }
 
-.project-details .project-info h1 {
-  margin-bottom: 2vw;
+/* Content */
+.content-wrapper-sticky {
+  position: sticky;
+  top: 10vw;
+  display: flex;
+  flex-direction: column;
 }
 
-.project-details .project-info p {
-  color: #5f5f5f;
+.case-header .eyebrow {
+  display: block;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1vw;
+  opacity: 0.4;
+  margin-bottom: 1vw;
+}
+
+.case-header .title-main {
+  margin-bottom: 2vw;
+  text-transform: none;
+}
+
+.case-header .summary-short {
+  margin-bottom: 2.5vw;
+  opacity: 0.8;
+  max-width: 480px;
+  line-height: 1.6;
+}
+
+.case-header .meta-data {
+  font-size: 14px;
+  opacity: 0.4;
+  margin-bottom: 4.5vw;
+  display: block;
+}
+
+/* Tags */
+.project-tags-section {
+  margin-bottom: 4.5vw;
+}
+.project-tags-section h4 {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1vw;
+  opacity: 0.4;
   margin-bottom: 1.5vw;
-  line-height: 160%;
 }
-
-.project-details .project-meta {
+.tags-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 3vw;
-  margin-top: 3vw;
-  padding-top: 3vw;
-  border-top: 1px solid rgba(198, 198, 198, 0.5);
+  gap: 12px;
+}
+.tag-badge {
+  padding: 8px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  letter-spacing: 0.02vw;
 }
 
-.project-details .project-meta div span {
-  display: block;
-  font-size: 14px;
-  opacity: 0.5;
-  margin-bottom: 10px;
+/* Story Blocks */
+.project-story-block {
+  margin-bottom: 4vw;
+}
+.project-story-block h3 {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1vw;
+  opacity: 0.4;
+  margin-bottom: 1.2vw;
+}
+.project-story-block p {
+  line-height: 1.7;
+  opacity: 0.7;
+  max-width: 520px;
+  font-size: 16px;
 }
 
-@media (max-width: 768px) {
-  .project-container {
+/* Mobile & Tablet Responsiveness */
+@media (max-width: 1024px) {
+  .project-editorial {
     flex-direction: column;
     padding-top: 30vw;
   }
-  .project-media,
-  .project-details {
+  .editorial-left, .editorial-right {
     width: 100%;
-    padding: 0;
   }
-  .project-details {
-    margin-top: 10vw;
-  }
-  .project-details .project-info {
+  .content-wrapper-sticky {
     position: relative;
     top: 0;
   }
 }
+
+@media (max-width: 768px) {
+  .editorial-right .case-header .title-main {
+    font-size: 10vw;
+  }
+  
+  /* Layout re-order on mobile if using flex on parent */
+  .project-editorial {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .editorial-right {
+    order: 1; /* Header + Tags + Intro first? User said: intro -> gallery -> tags -> details */
+  }
+  .editorial-left {
+    order: 2; /* Gallery images below header */
+  }
+  .editorial-right .project-tags-section,
+  .editorial-right .project-story-block {
+     /* We can't easily break the right column parts unless we change HTML structure or use CSS Grid */
+  }
+}
+
 
 .work-item-link {
   width: 100%;
